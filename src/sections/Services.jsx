@@ -103,7 +103,7 @@ export default function Services() {
           Services <span className="bg-gradient-to-r from-jdk-cyan to-jdk-purple bg-clip-text text-transparent">Engineered</span> for Execution
         </>
       }
-      subtitle="With over a decade of experience, we provide structural consulting that bridges the gap between high-level strategy and ground-level results."
+      subtitle="For nearly two decades, we provide structural consulting that bridges the gap between high-level strategy and ground-level results."
     >
       {/* Visual background element */}
       <div className="absolute inset-0 -z-10 overflow-hidden pointer-events-none">

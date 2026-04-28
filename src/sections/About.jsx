@@ -116,20 +116,20 @@ export default function About() {
                 ">
                 Get Started <ArrowRight size={16} />
               </Button>
-             <Button
-               as="a"
-               href="#methodology"
-               variant="ghost"
-               className="
+              <Button
+                as="a"
+                href="#methodology"
+                variant="ghost"
+                className="
                  rounded-full px-6 py-3 font-extrabold
                  border border-gray-800
                  bg-jdk-black text-white hover:text-jdk-cyan
                  transition-all duration-300
                  hover:bg-gray-800
                "
-             >
-               View Methodology
-             </Button>
+              >
+                View Methodology
+              </Button>
             </motion.div>
           </motion.div>
         </Card>

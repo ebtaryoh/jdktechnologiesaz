@@ -131,7 +131,7 @@ export default function Customers() {
             </p>
 
             <div className="mt-4 flex flex-wrap gap-2">
-              {["California", "Nevada", "Illinois", "International"].map((x, i) => (
+              {["California", "New Mexico", "Colorado", "Arizona", "South Carolina", "Maryland"].map((x, i) => (
                 <motion.span
                   key={x}
                   initial={{ opacity: 0, y: 8 }}

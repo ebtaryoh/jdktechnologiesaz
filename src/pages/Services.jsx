@@ -111,7 +111,7 @@ export default function ServicesPage() {
           
           <div className="mt-12 pt-12 border-t border-white/5 grid grid-cols-2 md:grid-cols-4 gap-8">
              <div>
-                <p className="text-2xl font-black text-white">15+</p>
+                <p className="text-2xl font-black text-white">30+</p>
                 <p className="text-[10px] font-bold text-gray-500 uppercase tracking-widest">Years Experience</p>
              </div>
              <div>
@@ -119,8 +119,8 @@ export default function ServicesPage() {
                 <p className="text-[10px] font-bold text-gray-500 uppercase tracking-widest">Execution Focus</p>
              </div>
              <div>
-                <p className="text-2xl font-black text-white">DoD</p>
-                <p className="text-[10px] font-bold text-gray-500 uppercase tracking-widest">Subcontracting</p>
+                <p className="text-2xl font-black text-white">98%</p>
+                <p className="text-[10px] font-bold text-gray-500 uppercase tracking-widest">program recovery</p>
              </div>
              <div>
                 <p className="text-2xl font-black text-white">SAP</p>

@@ -1,6 +1,6 @@
 export const BRAND = {
-//   name: "JDK TECHNOLOGIES LLC",
-//   tagline: "Positioning for success!",
+  //   name: "JDK TECHNOLOGIES LLC",
+  //   tagline: "Positioning for success!",
   location: "Mesa, Arizona",
   phone: "(682)216-7476",
 
@@ -37,7 +37,7 @@ export const SERVICES = [
   {
     title: "Program Management",
     desc: "Top-down PMO execution focusing on governance, risk mitigation, and timeline reliability.",
-    features: ["PMO Setup & Recovery", "Monitoring & Control", "Risk Management Frameworks"],
+    features: ["PMO Setup & Recovery", "Subcontract management monitoring and control", "Risk Management Frameworks"],
   },
   {
     title: "Grant Acquisition",
@@ -45,9 +45,9 @@ export const SERVICES = [
     features: ["Opportunity Scoring", "Narrative Development", "Compliance Mapping"],
   },
   {
-    title: "Federal Contracting",
+    title: "Federal proposal response",
     desc: "Regulatory-aligned contract response and execution support for federal and state agencies.",
-    features: ["Response Workflow Design", "Regulatory Compliance", "Audit-Ready Packaging"],
+    features: ["RFI/O consulting and development", "International proposal coordination and development"],
   },
 ];
 
@@ -77,12 +77,12 @@ export const CUSTOMERS = [
   {
     title: "Non Profit Organizations",
     desc:
-      "We empower non profit organizations to reach their full potential by providing expert guidance and innovative solutions. Our reach has taken us to California, Nevada, Illinois, and international locations.",
+      "We empower non profit organizations to reach their full potential by providing expert guidance and innovative solutions. Our reach has taken us to California, Arizona, and international locations (Africa - Benin, Zambia and Nigeria).",
   },
   {
     title: "Commercial and Government Organizations",
     desc:
-      "We assist small to large commercial organizations and government agencies with services aligned to their unique situation. Some customers include tier 1 & 2 DoD subcontractors and Fortune 500 companies. We also operate internationally.",
+      "We assist small to large commercial organizations and government agencies with services aligned to their unique situation. Some customers include tier 1 & 2 DoD subcontractors, DOE, and Fortune 500 companies. We also operate internationally.",
   },
 ];
 
@@ -91,7 +91,7 @@ export const CASE_STUDIES = [
     title: "PMO Recovery for a Multi-Program Portfolio",
     industry: "Commercial",
     challenge: "Delivery drift, unclear ownership, inconsistent reporting, and missed milestones.",
-    approach: "Program governance reset, cadence design, KPI dashboarding, risk controls.",
+    approach: "Program governance reset, cadence design, KPI dashboarding, Risk management controls.",
     outcome: "Restored execution clarity and improved timeline reliability across workstreams.",
     tags: ["PMO", "Governance", "KPI", "Risk"],
   },
@@ -107,7 +107,7 @@ export const CASE_STUDIES = [
     title: "Funding Pathway and Grant Support for a Nonprofit",
     industry: "Nonprofit",
     challenge: "Unclear funding priorities and a scattered pipeline of opportunities.",
-    approach: "Opportunity scoring, narrative structure, documentation readiness plan.",
+    approach: "Opportunity scoring, narrative structure, documentation readiness plan, utilize resource management tools.",
     outcome: "A stronger pipeline and clearer application strategy with repeatable templates.",
     tags: ["Grants", "Pipeline", "Narrative", "Templates"],
   },
@@ -141,7 +141,7 @@ export const METHODOLOGY = [
   {
     title: "Our Expertise",
     desc:
-      "Over 15 years of experience providing business and management consulting services to companies of all sizes.",
+      "Over 30+ years of experience providing business and management consulting services to companies of all sizes.",
   },
   {
     title: "Our Approach",
