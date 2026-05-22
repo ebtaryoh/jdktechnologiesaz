@@ -2,7 +2,7 @@ export const BRAND = {
   //   name: "JDK TECHNOLOGIES LLC",
   //   tagline: "Positioning for success!",
   location: "Mesa, Arizona",
-  phone: "(682)216-7476",
+  phone: "(410)861-3816",
 
   // Replace with your real WhatsApp number if you have one:
   // e.g. "15551234567" (country code + number, no +)
@@ -116,23 +116,30 @@ export const CASE_STUDIES = [
 export const TESTIMONIALS = [
   {
     quote:
-      "JDK brought structure to our execution. Reporting became clear, risks were visible, and leadership finally had a reliable view of progress.",
-    name: "Program Lead",
-    org: "Commercial Client",
+      "Thanks to JDK technology LLC, I have confidence in the schedule that the team built and that we will deliver on time.",
+    name: "Program Manager",
+    org: "DoD Contractor",
     rating: 5,
   },
   {
     quote:
-      "Their proposal support tightened our response process. We moved faster, stayed compliant, and delivered a stronger submission package.",
-    name: "Capture Manager",
-    org: "DoD Subcontractor",
-    rating: 5,
-  },
-  {
-    quote:
-      "They helped us clarify our grant approach and build repeatable templates. We now operate with focus instead of guesswork.",
+      "JDK technologies LLC understands what we need to do and guides us through the steps. I fully trust the team.",
     name: "Executive Director",
-    org: "Nonprofit Organization",
+    org: "Non profit company",
+    rating: 5,
+  },
+  {
+    quote:
+      "(JDK technologies LLC) knowledge and integrity go hand in hand when executing…",
+    name: "Program Director",
+    org: "Federal agency",
+    rating: 5,
+  },
+  {
+    quote:
+      "JDK Technologies LLC (proposal guidance and results) made negotiation less complicated and required less time to reach agreement.",
+    name: "Acquisition Chief",
+    org: "DOD agency",
     rating: 5,
   },
 ];
