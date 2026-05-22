@@ -6,12 +6,14 @@ export const BRAND = {
 
   // Replace with your real WhatsApp number if you have one:
   // e.g. "15551234567" (country code + number, no +)
-  whatsappNumber: "4108613816",
+  whatsappNumber: "14108613816",
   whatsappText: "Hello JDK Technologies LLC, I’d like to get started.",
 
-  // Formspree endpoint: create a form on Formspree and paste your ID here
+  // Formspree endpoint (deprecated): create a form on Formspree and paste your ID here
   // Example: https://formspree.io/f/abcdwxyz => "abcdwxyz"
   formspreeId: "mgolnnpa",
+  recaptchaSiteKey: "6LdZ1PcsAAAAAO9mwMjgBKjSZXQJTKKkcwzTdhAO",
+  recaptchaSecretKey: "6LdZ1PcsAAAAAFHdLVjyDfCAUTItAP6QKRsDzJgX",
 };
 
 export const HERO = {

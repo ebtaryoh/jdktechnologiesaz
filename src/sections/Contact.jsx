@@ -6,6 +6,8 @@ import Card from "../components/Card";
 import Button from "../components/Button";
 import { BRAND, NEWSLETTER } from "../data/content";
 import { Paperclip, Send, CheckCircle2, AlertTriangle, Phone, MapPin, Mail } from "lucide-react";
+import ReCAPTCHA from "react-google-recaptcha";
+import Toast from "../components/Toast";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 16 },
@@ -37,21 +39,24 @@ function Field({ label, required, children }) {
 
 export default function Contact() {
   const formEndpoint = useMemo(() => {
-    const id = BRAND.formspreeId?.trim();
-    return id && id !== "YOUR_FORMSPREE_ID" ? `https://formspree.io/f/${id}` : "";
+    const key = BRAND.web3formAccessKey?.trim();
+    return key ? "https://api.web3forms.com/submit" : "";
   }, []);
 
   const [form, setForm] = useState({ name: "", email: "", message: "", file: null });
   const [status, setStatus] = useState({ state: "idle", message: "" }); // idle | loading | success | error
 
-  const onSubmit = async (e) => {
+  const [recaptchaToken, setRecaptchaToken] = useState(null);
+    const [toast, setToast] = useState(null);
+
+    const onSubmit = async (e) => {
     e.preventDefault();
 
     if (!formEndpoint) {
       setStatus({
         state: "error",
         message:
-          "Formspree is not connected yet. Add your Formspree form ID in src/data/content.js (BRAND.formspreeId).",
+          "Web3Form is not configured. Ensure the access key is set in src/data/content.js (BRAND.web3formAccessKey).",
       });
       return;
     }
@@ -63,7 +68,9 @@ export default function Contact() {
       fd.append("name", form.name);
       fd.append("email", form.email);
       fd.append("message", form.message);
-      if (form.file) fd.append("attachment", form.file); // may require paid plan on Formspree
+      fd.append("access_key", BRAND.web3formAccessKey?.trim());
+      if (form.file) fd.append("attachment", form.file);
+      if (recaptchaToken) fd.append("recaptcha", recaptchaToken);
 
       const res = await fetch(formEndpoint, {
         method: "POST",
@@ -82,6 +89,10 @@ export default function Contact() {
       setForm({ name: "", email: "", message: "", file: null });
     } catch {
       setStatus({ state: "error", message: "Network error. Please try again." });
+    }
+    // Show toast for any status change
+    if (status.state !== "idle") {
+      setToast({ type: status.state, message: status.message });
     }
   };
 
@@ -151,6 +162,12 @@ export default function Contact() {
                   />
                 </Field>
 
+                {/* reCAPTCHA */}
+                <ReCAPTCHA
+                  sitekey="YOUR_RECAPTCHA_SITE_KEY"
+                  onChange={(token) => setRecaptchaToken(token)}
+                />
+
                 {/* Attach + Submit */}
                 <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
                   <label className="group inline-flex cursor-pointer items-center gap-2 rounded-xl border border-gray-800 bg-jdk-black px-4 py-3 text-sm font-extrabold text-white transition hover:bg-gray-800 hover:border-gray-700">
@@ -170,7 +187,7 @@ export default function Contact() {
 
                   <Button
                     type="submit"
-                    disabled={status.state === "loading"}
+                    disabled={status.state === "loading" || !recaptchaToken}
                     className="
                       rounded-xl border-none
                       bg-gradient-to-r from-jdk-cyan to-jdk-purple text-white
@@ -210,6 +227,9 @@ export default function Contact() {
                       <span>{status.message}</span>
                     </motion.div>
                   ) : null}
+                  {toast && (
+                    <Toast type={toast.type} message={toast.message} onClose={() => setToast(null)} />
+                  )}
 
                   {status.state === "error" ? (
                     <motion.div
@@ -289,6 +309,7 @@ export default function Contact() {
               >
                 <input
                   type="email"
+                  name="email"
                   className="w-full flex-1 rounded-xl border border-gray-800 bg-jdk-black text-white px-4 py-3 text-sm outline-none transition focus:border-jdk-cyan focus:ring-2 focus:ring-jdk-cyan/50 placeholder:text-gray-600"
                   placeholder="Email Address"
                   required
