@@ -1,12 +1,12 @@
 export const BRAND = {
-  //   name: "JDK TECHNOLOGIES LLC",
+  name: "JDK Technologies LLC",
   //   tagline: "Positioning for success!",
   location: "Mesa, Arizona",
   phone: "(410)861-3816",
 
   // Replace with your real WhatsApp number if you have one:
   // e.g. "15551234567" (country code + number, no +)
-  whatsappNumber: "",
+  whatsappNumber: "4108613816",
   whatsappText: "Hello JDK Technologies LLC, I’d like to get started.",
 
   // Formspree endpoint: create a form on Formspree and paste your ID here
