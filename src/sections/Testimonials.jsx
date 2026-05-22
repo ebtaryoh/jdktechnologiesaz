@@ -27,7 +27,7 @@ export default function Testimonials() {
       title="Trusted for clarity and execution"
       subtitle="What clients say when the work becomes more structured, measurable, and easier to lead."
     >
-      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
         {TESTIMONIALS.map((t, idx) => (
           <Reveal key={t.name + idx} delay={idx * 0.04}>
             <Card className="h-full">
