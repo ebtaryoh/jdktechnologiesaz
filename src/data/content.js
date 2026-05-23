@@ -12,6 +12,7 @@ export const BRAND = {
   // Formspree endpoint (deprecated): create a form on Formspree and paste your ID here
   // Example: https://formspree.io/f/abcdwxyz => "abcdwxyz"
   formspreeId: "mgolnnpa",
+  web3formAccessKey: "0079d9bf-306c-488b-8a2a-c87c4fc64224",
   recaptchaSiteKey: "6LdZ1PcsAAAAAO9mwMjgBKjSZXQJTKKkcwzTdhAO",
   recaptchaSecretKey: "6LdZ1PcsAAAAAFHdLVjyDfCAUTItAP6QKRsDzJgX",
 };

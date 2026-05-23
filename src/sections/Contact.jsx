@@ -5,8 +5,8 @@ import Section from "../components/Section";
 import Card from "../components/Card";
 import Button from "../components/Button";
 import { BRAND, NEWSLETTER } from "../data/content";
-import { Paperclip, Send, CheckCircle2, AlertTriangle, Phone, MapPin, Mail } from "lucide-react";
-import ReCAPTCHA from "react-google-recaptcha";
+import { Send, CheckCircle2, AlertTriangle, Phone, MapPin, Mail } from "lucide-react";
+
 import Toast from "../components/Toast";
 
 const fadeUp = {
@@ -46,7 +46,7 @@ export default function Contact() {
   const [form, setForm] = useState({ name: "", email: "", message: "", file: null });
   const [status, setStatus] = useState({ state: "idle", message: "" }); // idle | loading | success | error
 
-  const [recaptchaToken, setRecaptchaToken] = useState(null);
+  
     const [toast, setToast] = useState(null);
 
     const onSubmit = async (e) => {
@@ -69,8 +69,8 @@ export default function Contact() {
       fd.append("email", form.email);
       fd.append("message", form.message);
       fd.append("access_key", BRAND.web3formAccessKey?.trim());
-      if (form.file) fd.append("attachment", form.file);
-      if (recaptchaToken) fd.append("recaptcha", recaptchaToken);
+      
+      
 
       const res = await fetch(formEndpoint, {
         method: "POST",
@@ -96,7 +96,7 @@ export default function Contact() {
     }
   };
 
-  const fileName = form.file?.name;
+  
 
   return (
     <Section
@@ -162,32 +162,13 @@ export default function Contact() {
                   />
                 </Field>
 
-                {/* reCAPTCHA */}
-                <ReCAPTCHA
-                  sitekey="YOUR_RECAPTCHA_SITE_KEY"
-                  onChange={(token) => setRecaptchaToken(token)}
-                />
 
-                {/* Attach + Submit */}
-                <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-                  <label className="group inline-flex cursor-pointer items-center gap-2 rounded-xl border border-gray-800 bg-jdk-black px-4 py-3 text-sm font-extrabold text-white transition hover:bg-gray-800 hover:border-gray-700">
-                    <Paperclip size={16} className="text-jdk-cyan" />
-                    <span>Attach file</span>
-                    <input
-                      type="file"
-                      className="hidden"
-                      onChange={(e) => setForm((p) => ({ ...p, file: e.target.files?.[0] || null }))}
-                    />
-                    {fileName ? (
-                      <span className="ml-2 max-w-[160px] truncate rounded-full border border-gray-700 bg-gray-800 px-3 py-1 text-xs font-bold text-gray-300">
-                        {fileName}
-                      </span>
-                    ) : null}
-                  </label>
 
+                {/* Submit */}
+                <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-end">
                   <Button
                     type="submit"
-                    disabled={status.state === "loading" || !recaptchaToken}
+                    disabled={status.state === "loading"}
                     className="
                       rounded-xl border-none
                       bg-gradient-to-r from-jdk-cyan to-jdk-purple text-white
