@@ -3,7 +3,6 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import CookieBanner from "./components/CookieBanner";
 import WhatsAppFloat from "./components/WhatsAppFloat";
-import AgentFloat from "./components/AgentFloat";
 
 import Home from "./pages/Home";
 import ServicesPage from "./pages/Services";
@@ -26,7 +25,6 @@ export default function App() {
       </main>
       <Footer />
       <WhatsAppFloat />
-      <AgentFloat />
       <CookieBanner />
     </div>
   );
