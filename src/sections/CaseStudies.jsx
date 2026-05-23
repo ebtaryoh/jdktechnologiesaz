@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import Section from "../components/Section";
 import Card from "../components/Card";
 import Button from "../components/Button";
+import { Link } from "react-router-dom";
 import { CASE_STUDIES } from "../data/content";
 import { ArrowRight, Sparkles, ArrowUpRight } from "lucide-react";
 
@@ -120,8 +121,8 @@ function CaseCard({ cs, idx }) {
           {/* CTA (Colored button) */}
           <div className="mt-6">
             <Button
-              as="a"
-              href="#contact"
+              as={Link}
+              to="/contact"
               className="
                 w-full
                 rounded-xl

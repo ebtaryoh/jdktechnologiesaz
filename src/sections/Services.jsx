@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import Section from "../components/Section";
 import Card from "../components/Card";
 import Button from "../components/Button";
+import { Link } from "react-router-dom";
 import { SERVICES } from "../data/content";
 import {
   Briefcase,
@@ -77,8 +78,8 @@ function ServiceCard({ s, idx }) {
           {/* Spacer to push button down */}
           <div className="mt-auto pt-4">
             <Button
-              as="a"
-              href="#contact"
+              as={Link}
+              to="/contact"
               variant="ghost"
               className="w-full group/btn relative overflow-hidden transition-all duration-300 hover:border-jdk-cyan/50"
             >

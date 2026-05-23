@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import Section from "../components/Section";
 import Card from "../components/Card";
 import Button from "../components/Button";
+import { Link } from "react-router-dom";
 import { METHODOLOGY } from "../data/content";
 import { ArrowRight, ClipboardCheck, Gauge, Layers, Shield, Sparkles } from "lucide-react";
 
@@ -125,8 +126,8 @@ export default function Methodology() {
             <div className="flex flex-col gap-3 sm:flex-row">
               {/* Colored primary */}
               <Button
-                as="a"
-                href="#contact"
+                as={Link}
+                to="/contact"
                 className="
                   rounded-full
                   bg-gradient-to-r from-jdk-cyan to-jdk-purple text-white border-none

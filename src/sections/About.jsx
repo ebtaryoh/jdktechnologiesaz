@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import Section from "../components/Section";
 import Card from "../components/Card";
 import Button from "../components/Button";
+import { Link } from "react-router-dom";
 import { MISSION, BRAND } from "../data/content";
 import { ArrowRight, ShieldCheck, Target, Workflow } from "lucide-react";
 
@@ -109,7 +110,7 @@ export default function About() {
             </motion.div>
 
             <motion.div variants={fadeUp} className="mt-7 flex flex-col gap-3 sm:flex-row">
-              <Button as="a" href="#contact" className="
+              <Button as={Link} to="/contact" className="
                   bg-gradient-to-r from-jdk-cyan to-jdk-purple text-white border-none
                   transition-all duration-300
                   hover:opacity-90 hover:-translate-y-0.5 hover:shadow-[0_14px_40px_rgba(213,0,249,0.35)]
