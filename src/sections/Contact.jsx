@@ -1,5 +1,5 @@
 // src/sections/Contact.jsx
-import { useMemo, useState, useEffect } from "react";
+import { useMemo, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Section from "../components/Section";
 import Card from "../components/Card";
@@ -45,12 +45,7 @@ export default function Contact() {
 
   const [form, setForm] = useState({ name: "", email: "", message: "", file: null });
   const [status, setStatus] = useState({ state: "idle", message: "" }); // idle | loading | success | error
-  useEffect(() => {
-    if (status.state === "success") {
-      const timer = setTimeout(() => setStatus({ state: "idle", message: "" }), 3000);
-      return () => clearTimeout(timer);
-    }
-  }, [status.state]);
+
   
     const [toast, setToast] = useState(null);
 
@@ -87,17 +82,18 @@ export default function Contact() {
         const data = await res.json().catch(() => null);
         const msg = data?.error || "Something went wrong submitting the form. Please try again.";
         setStatus({ state: "error", message: msg });
+        setToast({ type: "error", message: msg });
         return;
       }
 
-      setStatus({ state: "success", message: "Message sent successfully. We’ll get back to you soon." });
+      const successMsg = "Message sent successfully. We'll get back to you soon.";
+      setStatus({ state: "success", message: successMsg });
+      setToast({ type: "success", message: successMsg });
       setForm({ name: "", email: "", message: "", file: null });
     } catch {
-      setStatus({ state: "error", message: "Network error. Please try again." });
-    }
-    // Show toast for any status change
-    if (status.state !== "idle") {
-      setToast({ type: status.state, message: status.message });
+      const errMsg = "Network error. Please try again.";
+      setStatus({ state: "error", message: errMsg });
+      setToast({ type: "error", message: errMsg });
     }
   };
 
@@ -200,21 +196,19 @@ export default function Contact() {
 
                 {/* Alerts */}
                 <AnimatePresence mode="wait">
-                  {status.state === "success" && (
-                    <div className="fixed inset-0 flex items-center justify-center z-50 pointer-events-none">
-                      <motion.div
-                        key="success"
-                        variants={alertAnim}
-                        initial="hidden"
-                        animate="show"
-                        exit="exit"
-                        className="flex items-start gap-2 rounded-2xl border border-jdk-cyan/30 bg-jdk-cyan/10 p-4 text-sm font-bold text-jdk-cyan backdrop-blur-md"
-                      >
-                        <CheckCircle2 size={18} className="mt-0.5" />
-                        <span>{status.message}</span>
-                      </motion.div>
-                    </div>
-                  )}
+                  {status.state === "success" ? (
+                    <motion.div
+                      key="success"
+                      variants={alertAnim}
+                      initial="hidden"
+                      animate="show"
+                      exit="exit"
+                      className="flex items-start gap-2 rounded-2xl border border-jdk-cyan/30 bg-jdk-cyan/10 p-4 text-sm font-bold text-jdk-cyan backdrop-blur-md"
+                    >
+                      <CheckCircle2 size={18} className="mt-0.5" />
+                      <span>{status.message}</span>
+                    </motion.div>
+                  ) : null}
                   {toast && (
                     <Toast type={toast.type} message={toast.message} onClose={() => setToast(null)} />
                   )}
@@ -234,7 +228,9 @@ export default function Contact() {
                   ) : null}
                 </AnimatePresence>
 
-
+                <p className="text-xs text-gray-500">
+                  This site is protected by reCAPTCHA and the Google Privacy Policy and Terms of Service apply.
+                </p>
               </form>
             </div>
           </Card>
