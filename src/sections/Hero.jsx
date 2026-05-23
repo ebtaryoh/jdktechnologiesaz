@@ -5,9 +5,8 @@ import Button from "../components/Button";
 import { HERO } from "../data/content";
 
 const container = {
-  hidden: { opacity: 0 },
+  hidden: {},
   show: {
-    opacity: 1,
     transition: { staggerChildren: 0.15, delayChildren: 0.1 },
   },
 };
@@ -31,7 +30,7 @@ const imageFloat = {
 
 export default function Hero() {
   return (
-    <section id="hero" className="relative min-h-[90vh] flex items-center overflow-hidden bg-jdk-black pt-20 pb-16 lg:py-0">
+    <section id="hero" className="relative min-h-[80vh] lg:min-h-[90vh] flex items-center overflow-hidden bg-jdk-black pt-10 pb-10 lg:py-0">
       {/* Background Orbs */}
       <div className="absolute inset-0 -z-10 overflow-hidden pointer-events-none">
         <div className="absolute inset-0 bg-jdk-black z-0" />
@@ -74,18 +73,18 @@ export default function Hero() {
           >
 
 
-            <motion.h1 variants={item} className="text-5xl font-extrabold tracking-tight text-white sm:text-7xl leading-[1.1]">
-              <span className="block mb-2">Premier Business</span>
+            <motion.h1 variants={item} className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl xl:text-7xl leading-[1.1]">
+              <span className="block mb-2">JDK Technologies LLC</span>
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-jdk-cyan via-jdk-purple to-jdk-orange animate-shimmer bg-[length:200%_auto] block py-2">
-                Consulting Services
+                Premier Business Consulting Firm
               </span>
             </motion.h1>
 
-            <motion.p variants={item} className="mt-8 text-lg md:text-xl text-gray-400 leading-relaxed font-medium">
+            <motion.p variants={item} className="mt-4 sm:mt-6 text-base md:text-lg text-gray-400 leading-relaxed font-medium">
               {HERO.subhead}
             </motion.p>
 
-            <motion.div variants={item} className="mt-10 flex flex-col sm:flex-row gap-5 items-start sm:items-center">
+            <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row gap-4 sm:gap-5 items-start sm:items-center">
               <Button
                 as={Link}
                 to="/services"
@@ -113,9 +112,9 @@ export default function Hero() {
               >
                 View Our Work
               </Button>
-            </motion.div>
+            </div>
 
-            <motion.div variants={item} className="mt-14 pt-8 border-t border-gray-800 flex flex-wrap gap-x-8 gap-y-4 text-sm font-semibold text-gray-500">
+            <motion.div variants={item} className="mt-8 sm:mt-10 pt-6 sm:pt-8 border-t border-gray-800 flex flex-wrap gap-x-6 sm:gap-x-8 gap-y-3 sm:gap-y-4 text-xs sm:text-sm font-semibold text-gray-500">
               <div className="flex items-center gap-2">
                 <div className="h-2 w-2 rounded-full bg-jdk-cyan shadow-[0_0_10px_#00e5ff]" />
                 Woman-Owned Business

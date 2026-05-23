@@ -3,6 +3,7 @@ export const BRAND = {
   //   tagline: "Positioning for success!",
   location: "Mesa, Arizona",
   phone: "(410)861-3816",
+  email: "monique@jdktechnologiesaz.com",
 
   // Replace with your real WhatsApp number if you have one:
   // e.g. "15551234567" (country code + number, no +)
@@ -12,7 +13,7 @@ export const BRAND = {
   // Formspree endpoint (deprecated): create a form on Formspree and paste your ID here
   // Example: https://formspree.io/f/abcdwxyz => "abcdwxyz"
   formspreeId: "mgolnnpa",
-  web3formAccessKey: "1816051d-c38c-403d-8b36-a67e9392fd3a",
+  web3formAccessKey: "82f2f6e8-4589-40c5-94e2-cdd5b055dedc",
   recaptchaSiteKey: "6LdZ1PcsAAAAAO9mwMjgBKjSZXQJTKKkcwzTdhAO",
   recaptchaSecretKey: "6LdZ1PcsAAAAAFHdLVjyDfCAUTItAP6QKRsDzJgX",
 };

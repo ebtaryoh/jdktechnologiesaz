@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { BRAND } from "../data/content";
 import LogoMark from "./LogoMark";
-import { ArrowUpRight, Mail, MapPin, Phone, Sparkles, Twitter, Linkedin, Facebook, Instagram } from "lucide-react";
+import { ArrowUpRight, Mail, MapPin, Phone, Sparkles, Linkedin } from "lucide-react";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 14 },
@@ -50,10 +50,7 @@ export default function Footer() {
   ];
   
   const socials = [
-    { icon: Linkedin, href: "#", color: "hover:text-jdk-cyan" },
-    { icon: Twitter, href: "#", color: "hover:text-jdk-cyan" },
-    { icon: Facebook, href: "#", color: "hover:text-jdk-purple" },
-    { icon: Instagram, href: "#", color: "hover:text-jdk-orange" },
+    { icon: Linkedin, href: "https://www.linkedin.com/in/moniqueferguson", color: "hover:text-jdk-cyan" },
   ];
 
   return (
@@ -91,12 +88,11 @@ export default function Footer() {
                 <a
                   key={i}
                   href={s.href}
-                  className={`
-                    flex h-10 w-10 items-center justify-center rounded-full border border-gray-800 bg-jdk-dark/50 
-                    text-gray-400 transition-all duration-300
-                    hover:-translate-y-1 hover:border-gray-500 hover:shadow-glow
-                    ${s.color}
-                  `}
+                  className="
+                    flex h-10 w-10 items-center justify-center rounded-full bg-[#0A66C2] border border-[#0A66C2]
+                    text-white transition-all duration-300
+                    hover:-translate-y-1 hover:bg-[#004182] hover:border-[#004182] hover:shadow-[0_0_20px_rgba(10,102,194,0.4)]
+                  "
                 >
                   <s.icon size={18} />
                 </a>

@@ -268,7 +268,7 @@ export default function Contact() {
                   <div>
                     <p className="text-xs font-extrabold text-gray-500">Email</p>
                     <p className="mt-1 text-sm font-extrabold text-white">
-                      Use the form to reach us
+                      <a href={`mailto:${BRAND.email}`} className="hover:text-jdk-cyan transition-colors">{BRAND.email}</a>
                     </p>
                   </div>
                 </div>
