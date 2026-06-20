@@ -9,8 +9,7 @@ import ServicesPage from "./pages/Services";
 import AboutPage from "./pages/About";
 import WorkPage from "./pages/Work";
 import ContactPage from "./pages/Contact";
-import { Analytics } from '@vercel/analytics/next';
-
+import { Analytics } from "@vercel/analytics/react";
 
 export default function App() {
   return (
